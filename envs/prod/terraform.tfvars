@@ -1,0 +1,5 @@
+db_user         = "tienda_app"
+db_password     = "Felix2903."
+db_name         = "tienda"
+api_domain_name = ""
+api_origin_path = ""
