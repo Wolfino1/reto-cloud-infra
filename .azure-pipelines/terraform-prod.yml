@@ -2,7 +2,7 @@ trigger:
   - master
 
 variables:
-- group: terraform-prod-vars   # cambia el nombre si tu Variable Group se llama distinto
+- group: terraform-vars
 
 pool:
   vmImage: 'ubuntu-latest'
