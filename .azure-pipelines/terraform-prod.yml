@@ -14,8 +14,17 @@ steps:
       set -ex
       echo "Instalando Terraform CLI..."
       curl -Lo terraform.zip https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
-      unzip terraform.zip
+
+      echo "Descomprimiendo..."
+      unzip -o terraform.zip
+
+      echo "Listando archivos..."
+      ls -la
+
+      echo "Moviendo terraform a /usr/local/bin..."
       sudo mv -f terraform /usr/local/bin/terraform
+
+      echo "Versión de terraform:"
       terraform version
     displayName: 'Instalar Terraform CLI'
 
