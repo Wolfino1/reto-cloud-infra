@@ -33,10 +33,9 @@ steps:
         echo "Contenido del repo:"
         ls -la
 
-        # Entramos al entorno prod
-        cd envs/prod
+        cd terraform
 
-        echo "Contenido de envs/prod:"
+        echo "Contenido de terraform:"
         ls -la
 
         # Mapear variables de Azure DevOps -> variables de Terraform
