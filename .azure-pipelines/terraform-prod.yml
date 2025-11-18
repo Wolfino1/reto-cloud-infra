@@ -13,6 +13,9 @@ steps:
   - script: |
       set -ex
       echo "Instalando Terraform CLI..."
+
+      cd /tmp
+      
       curl -Lo terraform.zip https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
 
       echo "Descomprimiendo..."
