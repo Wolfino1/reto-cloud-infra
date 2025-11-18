@@ -15,7 +15,7 @@ steps:
       echo "Instalando Terraform CLI..."
 
       cd /tmp
-      
+
       curl -Lo terraform.zip https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
 
       echo "Descomprimiendo..."
@@ -55,7 +55,8 @@ steps:
         export TF_VAR_db_password="$(DB_PASSWORD)"
 
         echo "Ejecutando terraform fmt..."
-        terraform fmt -check
+        terraform fmt -recursive
+        terraform fmt -check -recursive
 
         echo "terraform init..."
         terraform init -input=false
