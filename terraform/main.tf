@@ -57,9 +57,9 @@ module "rds" {
 module "cloudfront" {
   source = "./modules/cloudfront"
 
-  app_prefix       = var.app_prefix
-  api_domain_name  = var.api_domain_name
-  api_origin_path  = var.api_origin_path
+  app_prefix      = var.app_prefix
+  api_domain_name = var.api_domain_name
+  api_origin_path = var.api_origin_path
 
   frontend_bucket_id  = module.s3.frontend_bucket_id
   frontend_bucket_arn = module.s3.frontend_bucket_arn
@@ -76,16 +76,6 @@ moved {
 }
 
 moved {
-  from = aws_subnet.public_a
-  to   = module.vpc.aws_subnet.public_a
-}
-
-moved {
-  from = aws_subnet.public_b
-  to   = module.vpc.aws_subnet.public_b
-}
-
-moved {
   from = aws_subnet.private_a
   to   = module.vpc.aws_subnet.private_a
 }
@@ -98,21 +88,6 @@ moved {
 moved {
   from = aws_internet_gateway.igw
   to   = module.vpc.aws_internet_gateway.igw
-}
-
-moved {
-  from = aws_route_table.public
-  to   = module.vpc.aws_route_table.public
-}
-
-moved {
-  from = aws_route_table_association.public_a
-  to   = module.vpc.aws_route_table_association.public_a
-}
-
-moved {
-  from = aws_route_table_association.public_b
-  to   = module.vpc.aws_route_table_association.public_b
 }
 
 moved {
